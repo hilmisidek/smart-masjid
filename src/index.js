@@ -103,69 +103,100 @@ fetch("https://www.e-solat.gov.my/index.php?r=esolatApi/takwimsolat&period=week&
         display: flex;
        
         flex-direction: column;
-        height: 100vh;
-        width: 100vw;
+        flex-wrap: wrap;
+        height: 100%;
+        width: 100%;
+        max-width: 100%;
+        
+      `;
+      const ImageStack = styled.div`
+      width: 100vw;
+      height: 600px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      
+      background-image: url(${require("../src/assets/images/20220611_193707.jpg")});
+      background-repeat: no-repeat;
+      background-blend-mode: lighten;
+      background-size: 100% 100%;
+      background-color: rgba(255,255,255,0.4);
+      
+    `;    
+      const WaktuSolatHariIni = styled.div`
+      font-family: Verdana;
+      margin-left : auto;
+      margin-right: auto;
+      font-style: normal;
+      font-weight: 400;
+      color: rgba(133,247,8,1);
+      font-size: 30px;
+      
+    `;
+
+      const ContainerSolat = styled.div`
+      display: flex;
+      flex-wrap: wrap;
+      margin-left : auto;
+      margin-right: auto;
+      margin-top: auto;
+      margin-bottom: auto;      
+    `;
+
+    const ContainerWaktu = styled.div`
+      display: flex;
+      flex-wrap: wrap;
+      margin: 10px;
+    `;
+
+    const Zon = styled.div`
+      margin: auto;
+      bottom: 10px;
+      width:100vh;
+      
       `;
 
+      
+
       const Image = styled.div`
-      top: 0px;
-      left: 0px;
+           
       width: 100vw;
-      height: 453px;
-      position: relative;
+      height: 100vw;
+      
       opacity: 0.54;
       background-color: rgba(155,218,86,0.54);
-      flex-direction: column;
-      display: flex;
+      
+      
       background-image: url(${require("../src/assets/images/20220611_193707.jpg")});
-      background-size: cover;
+      
     `;
 
      
-      const WaktuSolatHariIni = styled.span`
+   
+// IMSAK top: 173px;
+//left: 637px;
+      const Imsak = styled.div`
         font-family: Verdana;
-        top: 31px;
-        text-align: center;
-        display: flex;
-        width: 100vw;
-        position: absolute;
-        font-style: normal;
-        font-weight: 400;
-        color: rgba(133,247,8,1);
-        font-size: 30px;
         
-      `;
-
-      const Imsak = styled.span`
-        font-family: Verdana;
-        top: 173px;
-        left: 637px;
-        position: absolute;
+        
         font-style: normal;
         font-weight: 400;
         color: rgba(208,2,27,1);
         font-size: 34px;
         text-align: center;
-        display: flex;
+       
       `;
+      
+      //top: 138px;
+      //left: 637px;
+      
 
-      const Reqimsak = styled.span`
+      //SYuruk top: 173px;
+      //  left: 1038px;
+      const Syuruk = styled.div`
         font-family: Verdana;
-        top: 138px;
-        left: 637px;
-        position: absolute;
-        font-style: normal;
-        font-weight: 400;
-        color: rgba(208,2,27,1);
-        font-size: 25px;
-        text-align: center;
-      `;
-
-      const Syuruk = styled.span`
-        font-family: Verdana;
-        top: 173px;
-        left: 1038px;
-        position: absolute;
+       
+        margin-lefft: 10px;
         font-style: normal;
         font-weight: 400;
         color: rgba(208,2,27,1);
@@ -173,11 +204,11 @@ fetch("https://www.e-solat.gov.my/index.php?r=esolatApi/takwimsolat&period=week&
         text-align: center;
       `;
 
-      const Subuh = styled.span`
+      //top: 173px;
+      //left: 175px;
+      const Subuh = styled.div`
         font-family: Verdana;
-        top: 173px;
-        left: 175px;
-        position: absolute;
+        
         font-style: normal;
         font-weight: 400;
         color: rgba(208,2,27,1);
@@ -185,11 +216,12 @@ fetch("https://www.e-solat.gov.my/index.php?r=esolatApi/takwimsolat&period=week&
         text-align: center;
       `;
 
-      const Zohor = styled.span`
+      
+      //top: 393px;
+      //left: 115px;
+      const Zohor = styled.div`
         font-family: Verdana;
-        top: 393px;
-        left: 115px;
-        position: absolute;
+        
         font-style: normal;
         font-weight: 400;
         color: rgba(208,2,27,1);
@@ -197,11 +229,11 @@ fetch("https://www.e-solat.gov.my/index.php?r=esolatApi/takwimsolat&period=week&
         text-align: center;
       `;
 
-      const Asar = styled.span`
+      //top: 393px;
+      //left: 489px;
+      const Asar = styled.div`
         font-family: Verdana;
-        top: 393px;
-        left: 489px;
-        position: absolute;
+        
         font-style: normal;
         font-weight: 400;
         color: rgba(208,2,27,1);
@@ -209,11 +241,11 @@ fetch("https://www.e-solat.gov.my/index.php?r=esolatApi/takwimsolat&period=week&
         text-align: center;
       `;
 
-      const Maghrib = styled.span`
+      //top: 393px;
+      //left: 812px;
+      const Maghrib = styled.div`
         font-family: Verdana;
-        top: 393px;
-        left: 812px;
-        position: absolute;
+       
         font-style: normal;
         font-weight: 400;
         color: rgba(208,2,27,1);
@@ -221,35 +253,82 @@ fetch("https://www.e-solat.gov.my/index.php?r=esolatApi/takwimsolat&period=week&
         text-align: center;
       `;
 
-      const Isyak = styled.span`
+      //top: 393px;
+      //left: 1119px;
+      const Isyak = styled.div`
         font-family: Verdana;
-        top: 393px;
-        left: 1119px;
-        position: absolute;
+     
         font-style: normal;
         font-weight: 400;
         color: rgba(208,2,27,1);
         font-size: 34px;
         text-align: center;
       `;
-
-      const Reqsubuh = styled.span`
-        font-family: Verdana;
-        top: 138px;
-        left: 175px;
-        position: absolute;
-        font-style: normal;
-        font-weight: 400;
-        color: rgba(208,2,27,1);
-        font-size: 25px;
-        text-align: center;
-      `;
-
-      const Reqisyak = styled.span`
+      const Reqimsak = styled.div`
       font-family: Verdana;
-        top: 363px;
-        left: 1119px;
-        position: absolute;
+      margin: 10px
+      font-style: normal;
+      font-weight: 400;
+      color: rgba(208,2,27,1);
+      font-size: 25px;
+      text-align: center;
+    `;
+      const Reqsubuh = styled.div`
+        font-family: Verdana;
+        margin: 10px
+        font-style: normal;
+        font-weight: 400;
+        color: rgba(208,2,27,1);
+        font-size: 25px;
+        text-align: center;
+      `;
+
+      
+
+
+      const Reqsyuruk = styled.div`
+      font-family: Verdana;
+      margin: 10px
+      font-style: normal;
+      font-weight: 400;
+      color: rgba(208,2,27,1);
+      font-size: 25px;
+      text-align: center;
+      `;
+
+      const Reqzohor = styled.div`
+        font-family: Verdana;
+        margin: 10px
+        font-style: normal;
+        font-weight: 400;
+        color: rgba(208,2,27,1);
+        font-size: 25px;
+        text-align: center;
+      `;
+
+      const Reqasar = styled.div`
+        font-family: Verdana;
+        margin: 10px
+        font-style: normal;
+        font-weight: 400;
+        color: rgba(208,2,27,1);
+        font-size: 25px;
+        text-align: center;
+      `;
+
+      const Reqmaghrib = styled.div`
+        font-family: Verdana;
+        margin: 10px
+        font-style: normal;
+        font-weight: 400;
+        color: rgba(208,2,27,1);
+        font-size: 25px;
+        text-align: center;
+      `;
+
+      const Reqisyak = styled.div`
+      font-family: Verdana;
+      margin: 10px
         font-style: normal;
         font-weight: 400;
         color: rgba(208,2,27,1);
@@ -257,61 +336,9 @@ fetch("https://www.e-solat.gov.my/index.php?r=esolatApi/takwimsolat&period=week&
         text-align: center;
     `;
 
+                     
 
-      const Reqsyuruk = styled.span`
-        font-family: Verdana;
-        top: 138px;
-        left: 1045px;
-        position: absolute;
-        font-style: normal;
-        font-weight: 400;
-        color: rgba(208,2,27,1);
-        font-size: 25px;
-        text-align: center;
-      `;
-
-      const Reqzohor = styled.span`
-        font-family: Verdana;
-        top: 363px;
-        left: 119px;
-        position: absolute;
-        font-style: normal;
-        font-weight: 400;
-        color: rgba(208,2,27,1);
-        font-size: 25px;
-        text-align: center;
-      `;
-
-      const Reqasar = styled.span`
-        font-family: Verdana;
-        top: 354px;
-        left: 487px;
-        position: absolute;
-        font-style: normal;
-        font-weight: 400;
-        color: rgba(208,2,27,1);
-        font-size: 25px;
-        text-align: center;
-      `;
-
-      const Reqmaghrib = styled.span`
-        font-family: Verdana;
-        top: 363px;
-        left: 812px;
-        position: absolute;
-        font-style: normal;
-        font-weight: 400;
-        color: rgba(208,2,27,1);
-        font-size: 25px;
-        text-align: center;
-      `;
-
-      const ImageStack = styled.div`
-        width: 100vw;
-        height: 453px;
-        position: relative;
-      `;                      
-
+      
 
 
 
@@ -377,30 +404,37 @@ fetch("https://www.e-solat.gov.my/index.php?r=esolatApi/takwimsolat&period=week&
     
     root.render(
       <body>
-      <div>
-        <Container>
-        <ImageStack>
-            <Image>          
-            </Image>
-            <WaktuSolatHariIni>Waktu Solat Hari Ini, {hari} {dateToday} bersamaan {hijriToday}</WaktuSolatHariIni>
-            <Imsak>IMSAK</Imsak>
-            <Syuruk>SYURUK</Syuruk>
-            <Subuh>SUBUH</Subuh>
-            <Zohor>ZOHOR</Zohor>
-            <Asar>ASAR</Asar>
-            <Maghrib>MAGHRIB</Maghrib>
-            <Isyak>ISYAK</Isyak>
-            <Reqimsak>{imsakToday}</Reqimsak>
-            <Reqsubuh>{subuhToday}</Reqsubuh>
-            <Reqsyuruk>{syurukToday}</Reqsyuruk>
-            <Reqzohor>{zohorToday}</Reqzohor>
-            <Reqasar>{asarToday}</Reqasar>
-            <Reqmaghrib> {maghribToday}</Reqmaghrib>
-            <Reqisyak>{isyakToday}</Reqisyak>
-          </ImageStack>
-          </Container>
-      </div>
-      <div style={{align:'center'}}>{element}</div>
+      <Container>
+           <ImageStack>
+           <WaktuSolatHariIni>Waktu Solat Hari Ini, {hari} {dateToday} bersamaan {hijriToday}</WaktuSolatHariIni>
+            <ContainerSolat>
+              <ContainerWaktu>
+                
+                <Imsak>
+                <Reqimsak>{imsakToday}</Reqimsak>
+                IMSAK</Imsak></ContainerWaktu>
+                <ContainerWaktu><Syuruk>
+                <Reqsyuruk>{syurukToday}</Reqsyuruk>
+                  SYURUK</Syuruk></ContainerWaktu>
+                  <ContainerWaktu><Subuh>
+                <Reqsubuh>{subuhToday}</Reqsubuh>
+                  SUBUH</Subuh></ContainerWaktu>
+                  <ContainerWaktu><Zohor>
+                <Reqzohor>{zohorToday}</Reqzohor>ZOHOR</Zohor></ContainerWaktu>
+                <ContainerWaktu><Asar>
+                <Reqasar>{asarToday}</Reqasar>
+                ASAR</Asar></ContainerWaktu>
+                <ContainerWaktu><Maghrib>
+                <Reqmaghrib> {maghribToday}</Reqmaghrib>
+                MAGHRIB</Maghrib></ContainerWaktu>
+                <ContainerWaktu><Isyak>
+                  <Reqisyak>{isyakToday}</Reqisyak>
+                ISYAK</Isyak></ContainerWaktu>
+              
+            </ContainerSolat>
+            </ImageStack>
+        <Zon>{element}</Zon>
+      </Container>
       </body>
     )
       })
